@@ -14,11 +14,14 @@ var userSchema = mongoose.Schema({
         email        : String,
         name         : String
     },
-    twitter          : {
+    spotify          : {
         id           : String,
-        token        : String,
+        accessToken  : String,
+        refreshToken : String,
         displayName  : String,
-        username     : String
+        profileUrl   : String,
+        href         : String,
+        photos       : Object
     },
     google           : {
         id           : String,

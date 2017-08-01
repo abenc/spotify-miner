@@ -8,7 +8,8 @@ var express           = require('express')
   , morgan            = require('morgan')
   , session           = require('express-session')
   , configDB          = require('../config/database.js')
-  , passport          = require('../config/passport.js')(require('passport'))
+  , passport          = require('passport')
+  //, passport          = require('../config/passport.js')(require('passport'))
 
 //add app.use mongo session pal
 
@@ -26,6 +27,8 @@ function start (opts) {
   }))
   app.use(passport.initialize())
   app.use(passport.session())
+  require('../config/passport.js')(passport)
+
   app.use(flash())
 
   //getting controllers into app
